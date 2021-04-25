@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OrnekMVC.Models.vtCalisan>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Yeni Oluştur", "Yeni")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.isim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.yas)
+            </th>
+            <th>
+                İşlem
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.isim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.yas)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id=item.ID /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Ayrıntı", "Details", new { id = item.ID /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.ID /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

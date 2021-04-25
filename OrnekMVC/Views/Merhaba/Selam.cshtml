@@ -1,0 +1,15 @@
+﻿@{ 
+    ViewBag.Title = "Selam";
+}
+<h2>Selam</h2>
+
+<h3>For Döngüsü ile girilen sayı kadar ismi yazdır</h3>
+<b>Örnek</b><br /><br />
+<code>Selam?isim=BgR&Say=4</code>
+
+<ul>
+    @for(int i = 0; i< ViewBag.Say; i++)
+    {
+        <li>@ViewBag.Message</li>
+    }
+</ul>
